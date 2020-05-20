@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>
+            HARSHIT SHARMA
+        </title>
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+
+        <script type="text/javascript" src="./blogs/blogs.json"></script>
+
+        <!-- Material components -->
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <script>
+            function BlogLoad(id, title, date, content) {
+                var elem = document.getElementById(id);
+                var data = "<div class=\"mdc-card Blog\"><div class=\"BlogTitle TitleText\">"+title+"</div><div class=\"BlogSubTitle TitleText\">"+date+"</div><hr><div class=\"BlogContent\">"+content+"</div></div>";
+                elem.innerHTML += data;
+            }
+            
+        </script>
+    </head>
+
+    <body class="Text">
+        <div class="MainMenu">
+            <aside class="mdc-drawer mdc-theme--secondary">
+                <div class="mdc-drawer__content">
+                  <nav class="mdc-list">
+                    <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
+                      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">book</i>
+                      <span class="mdc-list-item__text Text">Blogs</span>
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                      <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+                      <span class="mdc-list-item__text Text">About</span>
+                    </a>
+                  </nav>
+                </div>
+              </aside>
+        </div>
+
+        <div class="ContentPane BlogContainer">
+            <div id="blogs">
+            </div>
+        </div>
+        <script>
+            blogs = `{
+                "Blogs": [
+                    {
+                        "title": "test 1",
+                        "date": "16 Dec 2019",
+                        "content": "test"
+                    },
+                    {
+                        "title": "test 2",
+                        "date": "16 Dec 2019",
+                        "content": "test2"
+                    }
+                ]
+            }`;
+            blogJson = JSON.parse(blogs);
+            var i;
+            for (i = 0; i < blogJson.Blogs.length; i++) {
+                BlogLoad("blogs", blogJson.Blogs[i].title, blogJson.Blogs[i].date, blogJson.Blogs[i].content);
+            }
+        </script>
+    </body>
+</html>

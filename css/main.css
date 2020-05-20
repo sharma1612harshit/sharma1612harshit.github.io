@@ -1,0 +1,36 @@
+.MainMenu {
+    top: 0px;
+    left: opx;
+    float: left;
+}
+.ContentPane {
+    padding: 10px;
+}
+.BlogContainer {
+    height: 100vh; 
+    overflow-x: hidden; 
+    overflow-x: auto; 
+    text-align:justify; 
+}
+.Blog {
+    margin: 20px;
+    left: 10px;
+    padding: 10px;
+}
+.BlogTitle {
+    font-size:  32px;
+}
+.BlogSubTitle {
+    font-size:  14px;
+    color: #8c8c8c;
+}
+.BlogContent {
+    font-size:  20px;
+}
+.Text {
+    font-family: 'DM Mono', serif;
+}
+
+.TitleText {
+    font-family: 'Quicksand', serif;
+}
